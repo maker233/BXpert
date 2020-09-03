@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+
+
+        // NUMBERS
+
+        // NaN
+        const result1 = 3 * 'batman'
+        console.log(result1)
+
+
+        // Module op
+        const result2 = 7 % 2
+        console.log(result2)
+
+
+        if (7 % 2 != 0) {
+            console.log('No son múltiplos')
+        }
+
+
+
+        // Assignment op
+        let result3 = 33
+
+        // result = result + 10
+        result3 += 10
+
+        console.log('El resultado es', result3)
+
+
+
+
+
+
+
+        // STRINGS 
+
+        // ES5
+        const text1 = 'Esto es una concatenación, qué vieja: ' + result3 + ', no hay más!'
+        console.log(text1)
+
+        // ES6: interpolation
+        const text2 = `Esto es una interpolación, qué nueva: ${result3}, no hay más!`
+        console.log(text2)
+
+        // Scape
+        console.log("Mi perro \nse llama \"Popino\"")
+
+
+
+
+
+
+        // STRING METHODS
+
+        // .charAt()
+        const greeting = "Hello there!";
+        console.log(`"${greeting}" is a string and it's length is ${greeting.length}.`);
+        console.log(greeting.charAt(0)); // <== H
+        console.log(greeting.charAt(1)) // <== e
+        console.log(greeting.charAt(5)); // <== " "
+        console.log(greeting.charAt(11)); // <== !
+        console.log(greeting.charAt(12)); // <== "" as an empty string
+
+
+
+        // Equivalence
+        const greeting2 = "Hello there!";
+        console.log(greeting2[0]); // <== H
+        console.log(greeting2[3]); // <== l
+        console.log(greeting2[9]); // <== r
+        console.log(greeting2[-2]); // undefined
+
+
+
+        // .indexOf()
+        const message = "Don't be sad, be happy!";
+        console.log(message.indexOf("Don't")); // <== 0
+        console.log(message.indexOf("t")); // <== 4
+        console.log(message.indexOf("Be")); // <== -1 (capitalized Be ≠ lowercased be)
+        console.log(message.indexOf("py")); // 20
+
+
+
+        // .substring()
+        const message2 = "Don't be sad, be happy!";
+        let withSubstring = message2.substring(1, 9)        // on't be 
+        console.log(withSubstring);
+
+        let withSubstr = message2.substr(1, 9)              // on't be s
+        console.log(withSubstr);
+
+        let withSlice = message2.slice(-3, -1)
+        console.log(withSlice);
+
+
+
+
+
+    </script>
+</body>
+
+</html>

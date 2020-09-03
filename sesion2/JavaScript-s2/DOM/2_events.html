@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>Haz click en los botones</h1>
+    <button class="special">PONER ROJO EL TÍTULO</button>
+    <button class="special">PONER ROJO EL TÍTULO</button>
+    <button class="special">PONER ROJO EL TÍTULO</button>
+    <button class="special">PONER ROJO EL TÍTULO</button>
+    <button class="special">PONER ROJO EL TÍTULO</button>
+    <button class="special">PONER ROJO EL TÍTULO</button>
+
+    <br><br>
+
+
+    <hr>
+
+    <h2>Formulario</h2>
+    <input type="text" id="orderNumber">
+    <button class="check">Comprobar</button>
+    <p>El número de pedido es <span>XXX</span></p>
+
+
+
+
+    <script>
+
+
+        // // Example for single triggerer
+        // const button = document.querySelector('.special')
+
+        // button.onclick = () => {
+
+        //     document.querySelector('h1').style.color = 'red'
+        //     document.querySelector('h1').textContent = 'Me has cambiado desde el script!'
+
+        // }
+
+
+
+
+        // Example for multiple triggerer
+        const buttons = document.querySelectorAll('.special')
+
+        buttons.forEach(elm => {
+
+            elm.onclick = () => {
+
+                document.querySelector('h1').style.color = 'red'
+                document.querySelector('h1').textContent = 'Me has cambiado desde el script!'
+            }
+        })
+
+
+
+
+        // Extra party yay
+        document.querySelector('.check').onclick = () => {
+
+            // .value property controls an inpit content
+            const text = document.querySelector('#orderNumber').value
+            document.querySelector('p span').innerText = text
+        }
+
+
+
+    </script>
+</body>
+
+</html>

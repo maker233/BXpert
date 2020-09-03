@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        class Person {
+
+            constructor(par1, par2, par3, par4, par5, par6) {
+                this.name = par1
+                this.surname = par2
+                this.age = par3
+                this.height = par4
+                this.weight = par5
+                this.hobbies = par6
+            }
+
+            grow(years = 1) {
+                this.age += years
+            }
+
+            setNewHobby(hobby) {
+                this.hobbies.push(hobby)
+            }
+        }
+
+
+        const person1 = new Person('Ana', 'Suarez', 33, 1.78, 81, ['sky', 'beer'])
+        const person2 = new Person('Larry', 'Álvarez', 26, 1.58, 75, ['cinema', 'tiktok'])
+
+
+        console.log(`La persona se llama ${person1.name}`)
+        console.log(`La persona se llama ${person2.name}`)
+
+        console.log(`La persona tiene hobbies: ${person1.hobbies}`)
+        person1.setNewHobby('Jagger')
+        console.log(`La persona tiene ahora: ${person1.hobbies}`)
+
+    </script>
+</body>
+
+</html>

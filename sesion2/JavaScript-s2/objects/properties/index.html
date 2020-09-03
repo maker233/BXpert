@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        const person = {
+            name: 'Ana',
+            lastName: 'Suarz',
+            birth: Date(2000, 0, 1),
+            celiac: false,
+            height: 1.78,
+            weight: 81,
+            job: undefined,
+            address: {
+                street: 'García Luna',
+                number: 81,
+                code: 28002,
+                city: 'Madrid',
+                district: 'Prospe'
+            },
+            hobbies: ['Sky', 'Programming', 'Beer'],
+            subscriptions: [
+                {
+                    name: 'Netflix',
+                    cost: 9.99,
+                    currency: '€'
+                },
+                {
+                    name: 'Sitepoint',
+                    cost: 5.95,
+                    currency: '$'
+                },
+                {
+                    name: 'Adobe',
+                    cost: 19.95,
+                    currency: '€'
+                }
+            ]
+        }
+
+
+        console.log(person)
+        // console.table(person)
+
+        // Object property access (getter)
+        console.log(person.name)
+        console.log(person['name'])     // Equivalente
+
+        // Object property access (setter)
+        person.name = 'Ana María'
+        person.subscriptions[2].cost = 9.99
+        person.subscriptions.push({ name: 'Amazon Prime', cost: 9.99, currency: '€' })
+
+        // Object iterated access
+        person.subscriptions.forEach(elm => console.log(`La suscripción a ${elm.name} tiene un coste de ${elm.cost}${elm.currency}`))
+
+        // Object external extension
+        person.children = 5
+
+        // in operator
+        console.log(`¿Existe la propiedad 'surname' en el objeto?: ${'surname' in person}`)
+        console.log(`¿Existe la propiedad 'name' en el objeto?: ${'name' in person}`)
+
+        // delete operator
+        delete person.celiac
+
+        // list keys
+        const propertiesArray = Object.keys(person)
+        console.log('Las propiedades de la persona son:', propertiesArray)
+
+        // iterate keys
+        for (let keyName in person) {
+            // console.log(person[keyName])                 // value listing hack
+            console.log(keyName)
+        }
+
+        // list values
+        const valuesArray = Object.values(person)
+        console.log('Los valores de la persona son:', valuesArray)
+
+
+    </script>
+</body>
+
+</html>

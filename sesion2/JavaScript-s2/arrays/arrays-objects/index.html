@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS</title>
+</head>
+
+<body>
+
+    <script>
+
+        // Ejemplo 1
+        // const students = [
+        //     { name: "Bob", age: 17 },
+        //     { name: "Susy", age: 18 },
+        //     { name: "Ted", age: 18 },
+        //     { name: "Sarah", age: 20 },
+        //     { name: "Bill", age: 19 }
+        // ]
+
+        // students.push({ name: "Bryan", age: 33 })
+
+        // students.forEach(elm => console.log(elm.name))
+
+
+
+
+
+        // Ejemplo 2
+        const biArray = [
+            [31, 44, 33, 12],
+            [11, 87, 35, 19]
+        ]
+
+        let totalYears = 0, totalPersons = 0
+        // for (let i = 0; i < biArray.length; i++) {
+        //     for (let j = 0; j < biArray[i].length; j++) {
+        //         totalYears += biArray[i][j]
+        //         totalPersons++
+        //     }
+        // }
+        // console.log('la media de años es ', totalYears / totalPersons)
+
+
+        biArray.forEach(elm => elm.forEach(age => {
+            totalPersons++
+            totalYears += age
+        }))
+
+        console.log('la media de años es ', totalYears / totalPersons)
+
+
+
+
+    </script>
+</body>
+
+</html>

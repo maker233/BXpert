@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1 id="title1" class="clase-inicial-primera clase-inicial-segunda">Contenido inicial</h1>
+    <h2 id="title2">Contenido secundario</h2>
+
+    <p class="paragraph">Soy el primer párrafo</p>
+    <p class="paragraph">Soy el segundo párrafo</p>
+    <p class="paragraph">Soy un párrafo</p>
+
+    <h5 class="subtitle">Soy un subtítulo</h5>
+
+
+    <script>
+
+        // Select a node (querySelector: returns node)
+        const titleObject = document.querySelector('#title1')
+
+        // Select a node (querySelectorAll: returns nodeList)
+        const paragraphsObjects = document.querySelectorAll('.paragraph')
+
+        // Full node on console
+        console.log({ titleObject })
+        console.log(paragraphsObjects)
+
+        // Node property to get info
+        console.log('El texto interno del título es:', titleObject.innerText)
+        console.log('EL nombre del nodo:', titleObject.nodeName)
+        console.log('El ancho:', titleObject.offsetWidth)
+
+        // Node property to set info
+        // titleObject.innerText = "Vengo desde el script, <em>merluzo!</em>"
+        titleObject.innerHTML = "Vengo desde el script, <em>merluzo!</em>"
+        titleObject.style.backgroundColor = 'yellow'
+        paragraphsObjects.forEach(elm => elm.style.color = 'red')
+
+
+
+        // Class managing with .classList (yay!)
+        console.log('Las clases iniciales del nodo eran:', titleObject.className)
+
+        titleObject.classList.add('nueva-clase')
+        titleObject.classList.remove('clase-inicial-primera')
+        // titleObject.classList.toggle('clase-a-cambiar')
+
+        console.log('Las clases iniciales del nodo ahora son:', titleObject.className)
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+
+        class Person {
+
+            constructor(par1, par2, par3, par4) {
+                this.name = par1
+                this.surname = par2
+                this.age = par3
+                this.id = par4
+            }
+
+            grow(years = 1) {
+                this.age += years
+            }
+        }
+
+        const person1 = new Person('Patty', 'Talhombro', 33, '73483937K')
+        console.log(`La persona gtiene ${person1.age} años`)
+        person1.grow(3)
+        console.log(`La persona gtiene ${person1.age} años`)
+
+
+
+
+
+
+
+
+        class Player extends Person {
+
+            constructor(par1, par2, par3, par4, par5, par6) {
+
+                super(par1, par2, par3, par4)       // El método super() está conectado con el constructor de la clase padre
+                this.nick = par5
+                this.lives = par6
+                this.cash = 3000
+            }
+
+            looseLives(amount = 1) {
+                this.lives -= amount
+            }
+
+            spendCash(amount) {
+                this.cash -= amount
+            }
+        }
+
+
+        const player1 = new Player('Raúl', 'Díaz', 17, '73483937K', 'ShuMoReniKoh ò_Ó', 10)
+
+        console.log(`Este jugador se hace llamar "${player1.nick}" y tiene ${player1.cash}$`)
+        player1.spendCash(2000)
+        console.log(`Este jugador en realidad se llama "${player1.name}" y ahora tiene ${player1.cash}$`)
+
+
+
+
+
+
+
+
+        class Midget extends Player {
+
+            constructor(par1, par2, par3, par4, par5, par6) {
+
+                super(par1, par2, par3, par4, par5, par6)
+                this.role = 'enano'
+            }
+
+            spit() {
+                console.log(`El enano ${this.nick} te escupió! Menudo guarro...`)
+            }
+        }
+
+
+
+        class Witch extends Player {
+
+            constructor(par1, par2, par3, par4, par5, par6) {
+
+                super(par1, par2, par3, par4, par5, par6)
+                this.role = 'bruja'
+            }
+
+            makeSpell() {
+                console.log(`¡La bruja ${this.nick} te hizo un hechizo! Dafuck!`)
+            }
+        }
+
+
+        const midget1 = new Midget('Charini', 'Ruiz', 33, '73483937K', 'David', 5)
+        const witch1 = new Witch('Evo', 'Martín', 32, '73484937K', 'Piruja', 35)
+
+
+        console.log(`El enano ${midget1.nick} en realidad se llama ${midget1.name} y tiene ${midget1.age} años. Le quedan ${midget1.lives} vidas`)
+        midget1.grow(1)
+        midget1.looseLives(3)
+        console.log(`El enano ahora tiene ${midget1.age} años y tras un hechizo le quedan ${midget1.lives} vidas`)
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

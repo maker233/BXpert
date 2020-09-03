@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <h1 class="title">Soy el título</h1>
+    <a href="https://www.google.es" title="Ir a Google">Ir a Google</a>
+
+    <script>
+
+        const header = document.querySelector('h1')
+        const link = document.querySelector('a')
+
+        // attribute manipulation (raw)
+        link.href = "https://www.yahoo.es"
+
+        // attribute manipulation (functional)
+        link.setAttribute('id', 'yabadu')
+
+        // attribute reading (raw)
+        const linkTitleRaw = link.title
+        console.log('El título del link es', linkTitleRaw)
+
+        // attribute reading (functional)
+        const linkTitleFun = link.getAttribute('title')
+        console.log('El título del link es', linkTitleFun)
+
+        // remove attribute
+        link.removeAttribute('title')
+
+
+
+
+
+    </script>
+</body>
+
+</html>

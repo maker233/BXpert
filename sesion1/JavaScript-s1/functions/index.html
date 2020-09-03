@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+
+        // function declaration
+        function sayHello(name, surname = 'unknown') {
+            console.log(`Hello ${name} ${surname}!`)
+        }
+
+        // function invocation
+        sayHello('Mery', 'Luz')
+        sayHello('John', 'Cena')
+        sayHello('Lucy')
+
+
+
+
+
+
+
+        // function return
+        function composeGreeting(name, surname = 'unknown') {
+            const text = `Hello ${name} ${surname}!`
+            return text
+        }
+
+
+        const firstGreeting = composeGreeting('Ger', 'Álvarez')
+        console.log(firstGreeting)
+
+
+
+
+
+
+
+
+
+
+        // function return
+        function calculateTotalPrice(price, taxPercent) {
+
+            if (typeof price !== 'number' || typeof taxPercent !== 'number') {
+                return `Ingresa un valor numérico,`
+            }
+
+            const theTaxPart = price * taxPercent / 100
+            const finalResut = price + theTaxPart
+            return finalResut
+
+            console.log("No saldré, porque estoy tras el return")
+        }
+
+        const result = calculateTotalPrice(5, 7)
+        console.log(`El resultado que será enviado a la BBDD es ${result}€`)
+
+
+
+
+
+
+        // random generative function
+        function getRandomArbitrary(min, max) {
+            return Math.random() * (max - min) + min
+        }
+
+        console.log(getRandomArbitrary(1, 3))
+        console.log(getRandomArbitrary(2, 90))
+        console.log(getRandomArbitrary(1, 30))
+
+
+
+
+
+
+        // random additional example
+        function gradeTheStudent() {
+            const grades = ['Master', 'Good', 'Acceptable', 'Average', 'Poor', 'Fail']
+
+            let randomNumber = Math.random();            // Random decimal [0.0 - 1.0)
+            randomNumber = randomNumber * grades.length; // Random decimal [0.0 - 6.0)
+            randomNumber = Math.floor(randomNumber);     // Random integer [0   - 5]
+
+            return grades[randomNumber]
+        }
+
+        const myGrade = gradeTheStudent()
+        console.log('La calificación del alumno es:', myGrade)
+
+
+
+
+
+
+        // anonymous function
+        const numbers = [1, 2, 3, 4]
+
+        numbers.forEach(function (elm) {
+            console.log(elm * 2)
+        })
+
+        // anonymous function (function expression)
+        const functionExpression = function () {
+            console.log("YAY")
+        }
+
+        functionExpression()
+        functionExpression()
+        functionExpression()
+
+
+
+
+        // Variable scope
+
+        const age = 22                  // Global 
+
+        function myFn() {
+            const names = "Ger y Ali"   // Private
+        }
+
+        console.log(age)
+        console.log(names)
+
+
+
+    </script>
+</body>
+
+</html>

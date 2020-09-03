@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS ARRAYS</title>
+</head>
+
+<body>
+
+    <script>
+
+        // .reverse() SÍ MUTA el array original
+
+        const originalArray = ['one', 'two', 'three']
+        const fakeCopy = originalArray      // OPS! Los arrays y los objetos se pasan por refencia, no por valor
+        fakeCopy.reverse()
+        console.log(originalArray)          // OPS! Ha mutado el original (la referencia al original)
+
+
+
+        const originalArray2 = ['one', 'two', 'three']
+        console.log('El spread operator extrae los valores de un array u objeto', ...originalArray)
+        const realCopy = [...originalArray2]
+        realCopy.reverse()
+        console.log('El array original inmutado', originalArray2)
+        console.log('La copia (real) mutada', realCopy)
+
+
+
+    </script>
+</body>
+
+</html>

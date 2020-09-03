@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        const person = {
+            name: 'Ana',
+            lastName: 'Suarz',
+            age: 33,
+            birth: Date(2000, 0, 1),
+            celiac: false,
+            height: 1.78,
+            weight: 81,
+            job: undefined,
+            address: {
+                street: 'García Luna',
+                number: 81,
+                code: 28002,
+                city: 'Madrid',
+                district: 'Prospe'
+            },
+            hobbies: ['Sky', 'Programming', 'Beer'],
+            subscriptions: [
+                {
+                    name: 'Netflix',
+                    cost: 9.99,
+                    currency: '€'
+                },
+                {
+                    name: 'Sitepoint',
+                    cost: 5.95,
+                    currency: '$'
+                },
+                {
+                    name: 'Adobe',
+                    cost: 19.95,
+                    currency: '€'
+                }
+            ],
+            grow(years = 1) {
+                this.age += years          // this hace referencia al objeto al que pertenece
+            },
+            subscribe(service) {
+                this.subscriptions.push(service)
+            },
+            setName(newName) {
+                this.name = newName
+            }
+        }
+
+
+        console.log(`La persona tiene ${person.age} años`)
+        person.grow()
+        console.log(`La persona tiene ${person.age} años`)
+
+
+        console.log(`La persona está suscrita a`, person.subscriptions)
+        const amazon = { name: 'Amazon Prime', cost: 5.99, currency: '$' }
+        person.subscribe(amazon)
+        console.log(`La persona está suscrita a`, person.subscriptions)
+
+
+    </script>
+</body>
+
+</html>

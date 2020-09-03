@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        // Declaration
+        const drinks = ['Coca-cola', 'Agua', 'RedBull', 'Kas', 'Nestea', 'Cacaolat']
+
+        // Access
+        console.log(drinks[2])   // Acceso getter
+        drinks[2] = 'Monster'    // Acceso setter
+        console.log(drinks)      // Acceso getter
+
+        // Length
+        console.log(drinks.length)
+
+
+
+        // Adding extra values
+        drinks[drinks.length] = 'Cervemocho'
+        drinks.push('Choco Bailyes')
+        drinks.unshift('Zumo')
+        console.log(drinks)
+
+
+
+
+
+
+
+
+        // Removing elements
+        drinks.splice(1, 2)
+        console.log(drinks)
+
+
+
+
+
+
+
+
+
+
+        // Iteration (for)
+        for (let i = 0; i < drinks.length; i++) {
+            console.log(`El elemento del aray en esta iteración es: ${drinks[i]}`)
+        }
+
+        // Iteration (forEach, anonymous function argument)
+        drinks.forEach(function (elm) {
+            console.log(`El elemento del aray en esta iteración es: ${elm}`)
+        })
+
+        // Iteration (forEach, arrow function argument)
+        drinks.forEach(elm => console.log(`El elemento del aray en esta iteración es: ${elm}`))
+
+
+
+
+        // Additional examples
+        const numbers = [1, 2, 3, 4]
+
+        numbers.forEach(function (elm) {
+            console.log(elm * 2)
+        })
+
+        numbers.forEach(elm => console.log(elm * 2))
+
+
+
+        // Additional parameter (index), optional
+        const names = ['Ger', 'Ana', 'Whatever']
+        names.forEach((elm, index) => console.log(elm, index))
+
+
+
+
+        // Split method
+        const phrase = "This is long enough for a string to count it words"
+        const arrayWords = phrase.split(' ')
+        console.log('El array resultanto del corte es:', arrayWords, 'lo que da un total de', arrayWords.length, 'palabas')
+
+
+    </script>
+</body>
+
+</html>
